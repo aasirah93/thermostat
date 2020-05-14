@@ -1,7 +1,7 @@
 'use strict';
 class Thermostat {
 
-constructor() { 
+constructor() {
   this.DEFAULT_TEMPERATURE = 20;
   this.temperature = this.DEFAULT_TEMPERATURE;
   this.MINIMUM_TEMPERATURE = 10;
@@ -52,13 +52,13 @@ isMinimumTemperature() {
     }
     else {
     return this.temperature === this.MAX_LIMIT_PSM_ON;
-    
+
     }
   }
     resetTemperature() {
       this.temperature = this.DEFAULT_TEMPERATURE;
     }
-  
+
   energyUsage() {
     if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
       return 'low-usage';
