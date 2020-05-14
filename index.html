@@ -7,6 +7,12 @@
   <body>
     <section>
       <h1 id="temperature"></h1>
+      <h1>Current temperature: <span id="current-temperature">20</span></h1>
+      <form id="select-city">
+        <input id="current-city" type="text" placeholder="Enter a city"></input>
+        <input type="submit"></input>
+      </form>
+      </select>
       <p>
         <button id="temperature-up">+</button>
         <button id="temperature-down">-</button>
@@ -18,6 +24,7 @@
     </section>
     <script src="src/thermostat.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="interface.js"></script>
     <script>
 
     $(document).ready(function() {
@@ -54,9 +61,23 @@
     function updateTemperature() {
     $('#temperature').text(thermostat.temperature);
     $('#temperature').attr('class', thermostat.energyUsage());
-  };
+    }
+    
+  
+    $.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
+  console.log(data.main.temp);
 });
+
+displayWeather('London');
+$('#select-city').submit(function(event) {
+  event.preventDefault();
+  var city = $('#current-city').val();
+  displayWeather(city);
+})
+    });
+
 
     </script>
   </body>
 </html>
+  
