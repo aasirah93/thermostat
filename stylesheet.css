@@ -9,3 +9,19 @@
 .high-usage {
   color: red;
 }
+
+body {
+  background-color: #E6E6FA;
+}
+
+h1 {
+  background-color: #9370DB;
+}
+
+div {
+  background-color: #d5f4e6;
+}
+
+span {
+  background-color: #9370DB;
+}
